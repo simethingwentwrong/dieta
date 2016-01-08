@@ -7,11 +7,15 @@
  */
 public class Alimentos
 {
-    // instance variables - replace the example below with your own
+    // proteinas del alimento
     private float proteinas;
+    // carbohidratos del alimetno
     private float carbohidratos;
+    // grasas del alimetno
     private float grasas;
+    // calorias del alimetno
     private float calorias;
+    //  nombre del alimento
     private String nombre;
     /**
      * Constructor for objects of class Alimentos
@@ -65,6 +69,30 @@ public class Alimentos
             System.out.println("Componente/s mayoritario/s:                          proteinas , grasas");
         }
         
+    }
+    
+    /**
+     * valor de las proteinas
+     */
+    public float getProteinas()
+    {
+        return proteinas;
+    }
+    
+    /**
+     * valor de los carbohidratos
+     */
+    public float getCarbohidratos()
+    {
+        return carbohidratos;
+    }
+    
+    /**
+     * valor de las grasas
+     */
+    public float getGrasas()
+    {
+        return grasas;
     }
 }
 
