@@ -61,36 +61,39 @@ public class Usuario
         	System.out.println(datosGrasas);
         	System.out.println("Calorias totales ingeridas:                " + caloriasIngeridas);	
 		}
-		
+    
+    /**
+     * hacemos que nos devuelba el valor de las calorias ingeridas
+     */
     public float getCaloriasIngeridas()
 		{
 		    return caloriasIngeridas;
 		  }
 		  
 	 /**
-      * 
-	 */
+      * hacemos que devuelba el nombre del usuario
+	  */
     public String getNombreCompleto()
     {
 	    return nombreCompleto;
 		}
 		
 		/**
-		 * Hacemos la comparacion entre los dos usuarios para ver quein a comido mas calorias
+		 * Hacemos la comparacion entre los dos usuarios para ver las calorias ingeridas
 		 */
-		public void comparar (Usuario Usuario2)
+		public void comparar (Usuario usuario2)
 		{
-		if (caloriasIngeridas > Usuario2.getCaloriasIngeridas())
+		if (caloriasIngeridas > usuario2.getCaloriasIngeridas())
 		{
-		    System.out.println("El Usuario " + nombreCompleto + "ha cnsumido mas calorias que " +  Usuario2.getNombreCompleto() + " (" + caloriasIngeridas + " frente a " + Usuario2.getCaloriasIngeridas() + ")");
+		    System.out.println("El Usuario " + nombreCompleto + "ha cnsumido mas calorias que " +  usuario2.getNombreCompleto() + " (" + caloriasIngeridas + " frente a " + usuario2.getCaloriasIngeridas() + ")");
 		}
-		if (caloriasIngeridas < Usuario2.getCaloriasIngeridas())
+		if (caloriasIngeridas < usuario2.getCaloriasIngeridas())
 		{
-		    System.out.println("El Usuario " + Usuario2.getNombreCompleto() + "ha cnsumido mas calorias que " + nombreCompleto + " (" + Usuario2.getCaloriasIngeridas() + " frente a " + caloriasIngeridas + ")");
+		    System.out.println("El Usuario " + usuario2.getNombreCompleto() + "ha cnsumido mas calorias que " + nombreCompleto + " (" + usuario2.getCaloriasIngeridas() + " frente a " + caloriasIngeridas + ")");
 		}
 		else 
 		{
-		    System.out.println("El Usuario " + nombreCompleto + "ha consumido las mismas calorias que " +  Usuario2.getNombreCompleto() + " (" + caloriasIngeridas + " frente a " + Usuario2.getCaloriasIngeridas() + ")");		  
+		    System.out.println("El Usuario " + nombreCompleto + "ha consumido las mismas calorias que " +  usuario2.getNombreCompleto() + " (" + caloriasIngeridas + " frente a " + usuario2.getCaloriasIngeridas() + ")");		  
 		}
     }
 }
