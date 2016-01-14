@@ -11,6 +11,10 @@ public class Usuario
 	private float grasasIngeridas;
 	//calorias totales ingeridas por el usuario
 	private float caloriasIngeridas;
+	//cantidad de calorias del alimento mas calorico
+	private float alimentoMasCalorico;
+	//nombre del alimento mas calorio
+	private String nombreDelAlimentoMasCalorico;
 
 	/**
 	*Constructor de la clase usuario
@@ -22,6 +26,8 @@ public class Usuario
 		carbohidratosIngeridos = 0;
 		grasasIngeridas = 0;
 		caloriasIngeridas = 0;
+		nombreDelAlimentoMasCalorico = null;
+		alimentoMasCalorico = 0;
 	}
 	
 	/**
@@ -33,6 +39,11 @@ public class Usuario
 		carbohidratosIngeridos = carbohidratosIngeridos + (alimentoQueCome.getCarbohidratos() / 100 * gramosDelAlimento);
 		grasasIngeridas = grasasIngeridas + (alimentoQueCome.getGrasas() / 100 * gramosDelAlimento);
 		caloriasIngeridas = caloriasIngeridas + (alimentoQueCome.getCalorias() / 100 * gramosDelAlimento);
+		if (alimentoMasCalorico <= caloriasIngeridas)
+		{
+		    alimentoMasCalorico = caloriasIngeridas;
+		    nombreDelAlimentoMasCalorico = alimentoQueCome.getNombreAlimento();
+		}
 	}
 	
 	
@@ -96,4 +107,42 @@ public class Usuario
 		    System.out.println("El Usuario " + nombreCompleto + "ha consumido las mismas calorias que " +  usuario2.getNombreCompleto() + " (" + caloriasIngeridas + " frente a " + usuario2.getCaloriasIngeridas() + ")");		  
 		}
     }
+    
+   
+   
+    /**
+     * nos da el nombre del alimento mas calorico consumido hasta ahora o si no se a consumido alimentos salta mensaje
+     */
+    public void muestrameElAlimentoMasCalorico()
+    {
+        if (nombreDelAlimentoMasCalorico == null)
+        {
+             System.out.println("No se ha consumido ningun alimento");
+        }
+        else
+        {
+           System.out.println("Alimento mas calorico ingerido por este usuario hasta el momento: " + nombreDelAlimentoMasCalorico  + " (" + alimentoMasCalorico + " calorias por cada 100 gramos)");
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

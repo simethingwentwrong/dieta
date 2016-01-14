@@ -88,4 +88,9 @@ public class Alimento
         }
         System.out.println("Componente/s mayoritario/s: " + mayoritario);
     }
+    
+    public String getNombreAlimento()
+    {
+        return nombre;
+    }
 }
