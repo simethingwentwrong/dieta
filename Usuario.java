@@ -173,6 +173,34 @@ public class Usuario
         }
     }
     
+     /**
+     * indique si el usuario ha comido ese alimento más de una vez o no y, en caso afirmativo, cuántas veces lo ha hecho.
+     */
+    public void cuantasVecesLoHeComido2 ()
+    {
+        int cont = 0;
+        for( Alimento comido : alimentos)
+        {  
+             
+            for ( Alimento comidoAhora : alimentos)
+            {
+                Alimento comidoActualmente = comido;
+            if (comidoActualmente.getNombreAlimento().contains(comido.getNombreAlimento()))
+            {
+                cont = cont+1 ;
+            }
+            }
+        }
+        if (cont == 0 || cont == 1)
+        {
+            System.out.println ("no ha comido ningun alimento mas de una vez con ese nombre");
+        }
+        else if (cont >=2)
+        {
+            System.out.println ("El usuario ha comido " + getNombreAlimento() + " veces el alimento solicitado");
+        }
+    }
+    
     
     
     
