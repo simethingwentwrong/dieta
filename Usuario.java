@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 public class Usuario
 {
         //nombre del usuario
@@ -11,10 +11,12 @@ public class Usuario
 	private float grasasIngeridas;
 	//calorias totales ingeridas por el usuario
 	private float caloriasIngeridas;
-	//cantidad de calorias del alimento mas calorico
+	//alimento mas calorico
 	private float alimentoMasCalorico;
-	//nombre del alimento mas calorio
 	private String nombreDelAlimentoMasCalorico;
+	//creamos la lista
+	private ArrayList<Alimento> alimentos;
+	
 
 	/**
 	*Constructor de la clase usuario
@@ -28,6 +30,7 @@ public class Usuario
 		caloriasIngeridas = 0;
 		nombreDelAlimentoMasCalorico = null;
 		alimentoMasCalorico = 0;
+		alimentos = new ArrayList<Alimento>();
 	}
 	
 	/**
@@ -39,9 +42,10 @@ public class Usuario
 		carbohidratosIngeridos = carbohidratosIngeridos + (alimentoQueCome.getCarbohidratos() / 100 * gramosDelAlimento);
 		grasasIngeridas = grasasIngeridas + (alimentoQueCome.getGrasas() / 100 * gramosDelAlimento);
 		caloriasIngeridas = caloriasIngeridas + (alimentoQueCome.getCalorias() / 100 * gramosDelAlimento);
-		if (alimentoMasCalorico <= caloriasIngeridas)
+		alimentos.add(alimentoQueCome);
+		if (alimentoMasCalorico <= alimentoQueCome.getCalorias())
 		{
-		    alimentoMasCalorico = caloriasIngeridas;
+		    alimentoMasCalorico = alimentoQueCome.getCalorias();
 		    nombreDelAlimentoMasCalorico = alimentoQueCome.getNombreAlimento();
 		}
 	}
@@ -125,6 +129,25 @@ public class Usuario
         }
     }
     
+   
+    
+     /**
+     * .
+     */
+    public void verAlimentoEnPosicion(int posicion)
+    {
+        
+        posicion = posicion -1;
+        if(posicion >= 0 && posicion < alimentos.size()) {
+            System.out.println ("El alimento en la posicion " + (posicion+1) + " es :");
+            alimentos.get(posicion).muestraDatos();
+            
+        }
+        else
+        {
+            System.out.println ("La posicion es incorrecta");
+        }
+    }
     
     
     

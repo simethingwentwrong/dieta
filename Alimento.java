@@ -27,6 +27,7 @@ public class Alimento
         this.carbohidratos = carbohidratos;
         this.grasas = grasas;
         calorias = (proteinas * 4) + (carbohidratos * 4) + (grasas * 9);
+        
     }
     
     /**
